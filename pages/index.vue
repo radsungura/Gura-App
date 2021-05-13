@@ -1,15 +1,6 @@
 <template>
   <div>
-    <nav>
-      <ul>
-        <li>
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/pannier">Pannier</NuxtLink>
-        </li>
-      </ul>
-    </nav>
+  
     <div class="block" v-for="item in products" v-bind:key="item.item" >
       <div class="td">
       <img :src="item.source">
@@ -24,6 +15,21 @@
     </button>
       </div>
     </div>
+     <div   v-for="item in products" v-bind:key="item.item" >
+  <b-card 
+    class="td"
+  > <img style="max-width: 100%;"  :src="item.source">
+    <b-card-text>
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </b-card-text>
+    <label class="name" for="product">{{item.item}}</label>
+      <label class="price" for="product">{{item.price}}BFI</label>
+<button class="like" variant="success">
+      like
+    </button>
+    <b-button class="see" href="#" variant="primary">Add to Cart</b-button>
+  </b-card>
+</div>
     </div>
     
 </template>
@@ -100,6 +106,7 @@ div {
 }
 .block{
   display: inline-block;
+  margin :40vmh
  
 }
 tr{
@@ -110,7 +117,6 @@ img{
 }
 button{
   border-radius:10%;
-  background-color: rgb(23, 139, 233);
   color: aliceblue;
   size:50px;
 }
