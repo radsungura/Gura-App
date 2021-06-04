@@ -1,25 +1,24 @@
 <template>
-  <svg class="NuxtLogo" width="245" height="180" viewBox="0 0 452 342" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M139 330l-1-2c-2-4-2-8-1-13H29L189 31l67 121 22-16-67-121c-1-2-9-14-22-14-6 0-15 2-22 15L5 303c-1 3-8 16-2 27 4 6 10 12 24 12h136c-14 0-21-6-24-12z"
-      fill="#00C58E"
-    />
-    <path
-      d="M447 304L317 70c-2-2-9-15-22-15-6 0-15 3-22 15l-17 28v54l39-67 129 230h-49a23 23 0 0 1-2 14l-1 1c-6 11-21 12-23 12h76c3 0 17-1 24-12 3-5 5-14-2-26z"
-      fill="#108775"
-    />
-    <path
-      d="M376 330v-1l1-2c1-4 2-8 1-12l-4-12-102-178-15-27h-1l-15 27-102 178-4 12a24 24 0 0 0 2 15c4 6 10 12 24 12h190c3 0 18-1 25-12zM256 152l93 163H163l93-163z"
-      fill="#2F495E"
-    />
-  </svg>
+ <div>
+     <div class="center"  v-for="item in products" v-bind:key="item.item" >
+  <b-card img-alt="rad" :img-src="item.source" class="td">
+    <b-card-text>
+    <label variant=" float-left" for="product">{{item.item}}</label>
+      <label variant=" float-right" for="product">{{item.price}}Fbu</label>
+       </b-card-text>
+    <b-button  variant="primary float-left">
+      like
+    </b-button>
+    <b-button  variant="success float-right">
+      buy
+    </b-button>
+  </b-card>
+</div>
+    </div>
 </template>
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
+  name: 'Product',
    data() {
     return {
      products:[ {item: 'pizza',price: 1500,desc:'the best pizza made in burundi with burundian products', source : require('@/assets/agro/product1.jpeg')},
@@ -36,15 +35,77 @@ export default {
 
 }
 </script>
-<style>
-.NuxtLogo {
-  animation: 1s appear;
-  margin: auto;
+<style scoped>
+.center{
+ 
+  text-align: center;
+}
+.price{
+ text-decoration:bold ;
+  
+ margin-left: 30%;
+}
+.name{
+ text-decoration:bold ;
+ margin-left: 0px;
+}
+.like{ margin-bottom: 10px;
+   background-color: rgb(34, 76, 139);
+ color: white;
+ margin-right: 30%;
+ width: 30%;
+ height:  45%;
+}
+.see{ margin-bottom: 10px;
+ background-color: forestgreen;
+  color: white;
+ width: 30%;
+ height:  45%;
+}
+.logo {
+ width: 100px;
+}
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+div {
+  display:inline-block;
+  margin: 0 10px;
+}
+.td{
+  background-color: rgb(231, 228, 228);
+  display: inline-block;
+   width:250px;
+  border-radius:5px;
+  margin-bottom: 30px;
+}
+.block{
+  display: inline-block;
+  margin-bottom:30px;
+ 
+}
+tr{
+  width: 100%;
+}
+img{ border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+  width: 100%;
+}
+button{
+  border-radius:10%;
+  color: aliceblue;
+  size:50px;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-}
 </style>

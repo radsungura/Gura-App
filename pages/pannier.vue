@@ -1,6 +1,7 @@
 <template>
-    <div class="container">
-    <table>
+    <div >
+      <div class="container">
+    <table >
      <tr class="thead">
     <td >Photo</td>
     <td >Nom</td>
@@ -12,20 +13,26 @@
     <td ><img alt="product"  :src="item.source"></td>
     <td >{{item.item}}</td>
     <td >{{number}}</td>
-    <td >{{item.price}}</td>
+    <td >{{item.price}}Fbu</td>
     <td >
     <router-link to="/pay">
-    <button>
-        Buy
-    </button>
+    <b-button variant="success">
+        Add
+    </b-button>
     </router-link>
     
-    <button>
+    <b-button variant="danger">
         Delete
-    </button>
+    </b-button>
     </td>
     </tr>
     </table>
+    </div>
+    <br>
+    <b-button variant="primary float-right">
+        Confirm
+    </b-button>
+    <News />
     </div>
 
 </template>
@@ -46,6 +53,8 @@ export default {
 }
 </script>
 <style scoped>
+.center{
+    text-align:center; }
 .container {
   margin: 0 auto;
   min-height: 100vh;
